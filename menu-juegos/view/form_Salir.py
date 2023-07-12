@@ -49,12 +49,12 @@ class Salir:
         frame1.place(x=0, y=80, width=300, height=420)
         
         imgJuegos = Image.open(help.leerConfig("imagenJuegos", "Value"))
-        self.nueva_imagen = imgJuegos.resize((200, 200))
-        self.imagen_tk = ImageTk.PhotoImage(self.nueva_imagen)
+        nueva_imagen = imgJuegos.resize((200, 200))
+        imagen_tk = ImageTk.PhotoImage(nueva_imagen)
 
-        self.label = tk.Label(frame1)
-        self.label.place(x=40, y=100)
-        self.label.config(image=self.imagen_tk, bg="#ff9e18")
+        label = tk.Label(frame1)
+        label.place(x=40, y=100)
+        label.config(image=imagen_tk, bg="#ff9e18")
         
         titulo = tk.Label(frame1, text="ミ DATOS DEL JUGADOR 彡", font=("Helvetica", 16, "bold"), bg="#ff9e18", foreground="#773dbd")
         titulo.place(x=0, y=20)
@@ -64,8 +64,8 @@ class Salir:
         frame2 = tk.Frame(ventana, bg='#773dbd')
         frame2.place(x=300, y=80, width=700, height=420)
         
-        datos_player = tk.Label(frame2, font=("Helvetica", 13, "bold"), bg="#e0592a", foreground="#773dbd", width=40, height=6)
-        datos_player.place(x=50, y=60)
+        datos_jugador = tk.Label(frame2, font=("Helvetica", 13, "bold"), bg="#e0592a", foreground="#773dbd", width=40, height=6)
+        datos_jugador.place(x=50, y=60)
         
         # region contador
         contador_label = tk.Label(frame2, text="Contador: 0", font=("Helvetica", 13, "bold"), bg="#ffffff", foreground="#e0592a", width=40)

@@ -13,9 +13,11 @@ from view.form_Adivina_Numero import AdivinarNumero
 from view.form_Generador_Letras import Generador
 from view.form_Salir import Salir
 from models.util.Helpers import Helpers
+from controller.usuario import Usuario
 from PIL import Image, ImageTk
 
 help = Helpers()
+usuario = Usuario()
 
 
 # Creando una clase principal
@@ -56,13 +58,13 @@ class Menu:
         frame1 = tk.Frame(self.ventana, bg='#ff9e18')
         frame1.place(x=0, y=80, width=512, height=620)
 
-        self.imagen = Image.open(help.leerConfig("imagenJuegos", "Value"))
-        self.nueva_imagen = self.imagen.resize((200, 200))
-        self.imagen_tk = ImageTk.PhotoImage(self.nueva_imagen)
+        imagen = Image.open(help.leerConfig("imagenJuegos", "Value"))
+        nueva_imagen = imagen.resize((200, 200))
+        imagen_tk = ImageTk.PhotoImage(nueva_imagen)
 
-        self.label = tk.Label(frame1)
-        self.label.place(x=140, y=330)
-        self.label.config(image=self.imagen_tk, bg="#ff9e18")
+        label = tk.Label(frame1)
+        label.place(x=140, y=330)
+        label.config(image=imagen_tk, bg="#ff9e18")
 
     # region titulo datos
         self.titulo_datos_label = tk.Label(frame1, text="ミ★ DATOS ★彡", font=("Arial", 20), foreground="#773dbd", bg="#ff9e18")
@@ -71,21 +73,14 @@ class Menu:
     
     # region mostrar datos
 
-        self.datos_player = tk.Label(frame1, font=("Helvetica", 13, "bold"), bg="#e0592a", foreground="#773dbd", width=40, height=6)
-        self.datos_player.place(x=50, y=100)
-        
-        # if self.datos_jugador:
-        #     datos_texto = ""
-        #     for key, value in self.datos_jugador.items():
-        #         datos_texto += f"{key}: {value}\n"
-        #     self.datos_player.config(text=datos_texto)
-            
+        self.datos_jugador = tk.Label(frame1, font=("Helvetica", 13, "bold"), bg="#e0592a", foreground="#773dbd", width=40, height=6)
+        self.datos_jugador.place(x=50, y=100)
     # endregion mostrar datos
     
     # region contador
         self.contador_label = tk.Label(frame1, text="Contador: 0", font=("Helvetica", 13, "bold"), bg="#ffffff", foreground="#e0592a", width=40)
         self.contador_label.place(x=50, y=220)
-   # endregion contador
+    # endregion contador
 
     # region ultimo juego 
         self.ultimo_juego_label = tk.Label(frame1, text="El último juego registrado es: Ninguno", font=("Helvetica", 13, "bold"), bg="#9A75FF", foreground="#000", width=40, height=2)

@@ -72,9 +72,9 @@ class VentanaPrincipal(): # creando una clase
         label.place(x=120, y=50)
         label.config(image=imagen_tk, bg="#c486fa")
 
-        datos_label = tk.Label(frame1, font=("Arial", 12), bg="#e0592a", foreground="white", text= "", width=20, height=5)
-        datos_label.pack()
-        datos_label.place(x=160, y=380)
+        datos_jugador = tk.Label(frame1, font=("Arial", 12), bg="#e0592a", foreground="white", text= "", width=20, height=5)
+        datos_jugador.pack()
+        datos_jugador.place(x=160, y=380)
         # endregion Frame 1
 
         # region Frame 2

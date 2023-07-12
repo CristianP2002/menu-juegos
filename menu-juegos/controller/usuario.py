@@ -33,13 +33,3 @@ class Usuario:
     
     def setDescripcion(self,descripcion):
         self.__descripcion = descripcion
-    
-    def actualizar_datos_jugador(self):
-        if self.getNombreUsuario == "":
-            return("no hay datos")
-        else:
-            mensaje = (f"El usuario es: {self.getNombreUsuario()}\n")
-            mensaje += (f"La direccion es: {self.getDireccion()}\n")
-            mensaje += (f"El telefono es: {self.getTelefono()}\n")
-            mensaje += (f"La descripcion es: {self.getDescripcion()}")
-            return(mensaje) 
