@@ -29,7 +29,12 @@ class VentanaPrincipal(): # creando una clase
         # region metodos
         # abrir registro
         def abrir_registro():
-            Registro(ventana)
+            ventana_registro = Registro(ventana)
+            usuario = ventana_registro.registrar_datos()
+            if usuario:
+                # Acciones adicionales con el objeto usuario
+                print(f"Datos del usuario recibidos: {usuario.getNombreUsuario()}, {usuario.getDireccion()}, {usuario.getTelefono()}, {usuario.getDescripcion()}")
+
         
         # cerrar ventana
         def cerrar_ventana():

@@ -51,6 +51,7 @@ class Registro:
                 print(f"su telefono es: {usuario.getTelefono()}")
                 print(f"su descripcion es: {usuario.getDescripcion()}")
                 ventana.destroy()
+                return usuario
             else:
                 messagebox.showerror("Error", "Por favor, complete todos los campos.")
                 ventana.lift()
